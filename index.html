@@ -22,8 +22,8 @@
 			<div class="main">
 				<div id="fc-slideshow" class="fc-slideshow">
 					<ul class="fc-slides">
-						<li><img src="images/1.jpg" /><h3>Hot</h3><span>This is a lot more info</span></li>
-						<li><img src="images/2.jpg" /><h3>Cold</h3><span>This too.  Lorum ipsum etc.</span></li>
+						<li><img src="images/1.jpg" /><h3>Hot</h3><p>This is a lot more info</p></li>
+						<li><img src="images/2.jpg" /><h3>Cold</h3><p>This too.  Lorum ipsum etc.</p></li>
 						<li><img src="images/3.jpg" /><h3>Light</h3></li>
 						<li><img src="images/4.jpg" /><h3>Dark</h3></li>
 						<li><img src="images/5.jpg" /><h3>Soft</h3></li>
@@ -36,10 +36,15 @@
 		</div><!-- /container -->
 		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
 		<script src="js/jquery.flipshow.js"></script>
+    <script src="js/jquery.viewportchecker.js"></script>
 		<script>
 			$( function() {
 				
 				$( '#fc-slideshow' ).flipshow();
+
+        $('.fc-slides li').viewportChecker({
+          classToAdd: 'fadeIn'
+        });
 
 			} );
 		</script>

@@ -283,3 +283,8 @@ ul.fc-slides li {
 	top: auto;
 	margin: 5px;
 }
+
+.fadeIn p {
+  top: -100px;
+  border: 2px #ff0 solid;
+}
