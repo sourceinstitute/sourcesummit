@@ -130,7 +130,7 @@
 	font-style: normal;
 	font-weight: normal;
 	font-size: 20px;
-	background: #24CC44;
+	background: #1A9FFF;
 	color: #fff;
 	width: 40px;
 	height: 40px;
@@ -496,6 +496,7 @@ ul.fc-slides li {
 }
 
 .moreinfo a {
+  color: #1A9FFF;
 }
 
 .btn {
@@ -546,7 +547,7 @@ ul.fc-slides li {
 .btn-4 {
   border-radius: 50px;
   border: 3px solid #fff;
-  background-color: #24CC44;
+  background-color: #1A9FFF;
   color: #fff;
   overflow: hidden;
 }
