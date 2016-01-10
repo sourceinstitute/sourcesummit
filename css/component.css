@@ -560,3 +560,45 @@ section {
   font-size: 20px;
   color: #24CC44;
 }
+
+@media screen and (max-width: 600px) {
+  .moreinfo {
+    width: 100%;
+  }
+  .fc-slideshow img {
+    width: 200px;
+    height: 200px;
+  }
+  .fc-slideshow {
+    width: 200px;
+    height: 200px;
+  }
+  .ss-style-footer h3,
+  .ss-style-footer p,
+  .ss-style-info p {
+    font-size: 16px;
+    margin-top: 1em;
+  }
+  .fc-slideshow h3 {
+    top: 70%;
+    margin-top: 10px;
+    font-size: 16px;
+    line-height: 16px;
+    left: 20px;
+    right: 20px;
+
+  }
+  .fc-slideshow h3 span {
+    font-size: 14px;
+    line-height: 14px;
+  }
+  .profile {
+    max-width: 45%;
+  }
+  .profile img.face {
+    width: 100px;
+  }
+  .profile .org img {
+    width: 70px;
+  }
+}
