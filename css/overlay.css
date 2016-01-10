@@ -26,12 +26,18 @@
 
 /* Menu style */
 .overlay nav {
+  font-size: 34px;
+  padding: 5%;
   text-align: center;
   position: relative;
   top: 50%;
   height: 60%;
   -webkit-transform: translateY(-50%);
   transform: translateY(-50%);
+}
+
+.overlay p {
+  margin: 1em 0;
 }
 
 .overlay ul {
