@@ -352,7 +352,7 @@ ul.fc-slides li {
 }
 
 .cta {
-  width: 100%:
+  width: 300px:
 }
 
 .cta ul li {
@@ -601,5 +601,8 @@ section {
   }
   .profile .org img {
     width: 70px;
+  }
+  .cta {
+    width: 100%:
   }
 }
