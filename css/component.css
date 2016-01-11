@@ -532,6 +532,7 @@ section {
   float: left;
   font-size: 26px;
   text-align: center;
+  min-height: 450px;
   max-width: 31%;
   padding: 1%;
 }

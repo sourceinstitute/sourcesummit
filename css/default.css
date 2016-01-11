@@ -159,3 +159,14 @@ a {
 	text-align: center;
 	padding: 5px 0;
 }
+
+@media screen and (max-width: 1200px) {
+  .container > header {
+    max-width: 100%;
+  }
+}
+@media screen and (max-width: 1200px) {
+  .main, .container > header {
+    padding: 30px 20px;
+  }
+}
