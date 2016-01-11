@@ -160,12 +160,13 @@ a {
 	padding: 5px 0;
 }
 
-@media screen and (max-width: 1200px) {
+@media screen and (max-width: 850px) {
   .container > header {
     max-width: 100%;
+    width: 100%;
   }
 }
-@media screen and (max-width: 1200px) {
+@media screen and (max-width: 850px) {
   .main, .container > header {
     padding: 30px 20px;
   }
