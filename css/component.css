@@ -506,6 +506,7 @@ section {
 .ss-style-footer,
 .ss-style-info {
   padding: 100px 10% 100px 10%;
+  clear:both;
 }
 .ss-style-info img {
   width: 30%;
@@ -533,7 +534,7 @@ section {
   font-size: 26px;
   text-align: center;
   min-height: 450px;
-  max-width: 31%;
+  width: 31%;
   padding: 1%;
 }
 .profile img.face {
