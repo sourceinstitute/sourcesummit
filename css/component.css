@@ -364,11 +364,11 @@ ul.fc-slides li {
 }
 
 .main {
-  animation: appear 2.9s;
+  animation: appear 1.5s;
 }
 
 .cta {
-  animation: appear 1.9s;
+  animation: appear 2.9s;
   width: 300px:
 }
 
