@@ -1,3 +1,15 @@
+@font-face {
+  font-family: 'Oxygen';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Oxygen'), local('Oxygen-Regular'), url(../fonts/Oxygen-Regular.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'Oxygen';
+  font-style: normal;
+  font-weight: 700;
+  src: local('Oxygen Bold'), local('Oxygen-Bold'), url(../fonts/Oxygen-Bold.ttf) format('truetype');
+}
 /* General Demo Style */
 
 html { height: 100%; }
