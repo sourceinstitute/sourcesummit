@@ -391,10 +391,11 @@ ul.fc-slides li {
   margin-bottom: 20px;
 }
 .cta .host img{
-  width: 150px;
+  width: 120px;
 }
 
 .cta .ticket {
+  margin: 30px 0;
   text-align: center;
 }
 .cta .ticket button {
