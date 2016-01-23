@@ -625,4 +625,8 @@ section {
   .cta {
     width: 100%:
   }
+
+  .main .profile {
+    height: 250px;
+  }
 }
