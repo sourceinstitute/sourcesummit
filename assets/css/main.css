@@ -1,5 +1,5 @@
 @import url(font-awesome.min.css);
-@import url("https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,300italic,600,600italic");
+@import url(https://fonts.googleapis.com/css?family=Oxygen:400,700);
 
 /*
 	Forty by HTML5 UP
@@ -1641,7 +1641,7 @@
 
 	body, input, select, textarea {
 		color: #ffffff;
-		font-family: "Source Sans Pro", Helvetica, sans-serif;
+		font-family: "Oxygen", Helvetica, sans-serif;
 		font-size: 17pt;
 		font-weight: 300;
 		letter-spacing: 0.025em;
@@ -1715,6 +1715,12 @@
 			color: inherit;
 			border-bottom: 0;
 		}
+
+    h1 img {
+      max-height: 100px;
+      max-width: 100px;
+    }
+
 
 	h1 {
 		font-size: 2.5em;
@@ -1848,11 +1854,9 @@
 			}
 
 		header.major > p {
-			font-size: 0.7em;
-			font-weight: 600;
-			letter-spacing: 0.25em;
+      line-height: 1.25em;
+			letter-spacing: 0.10em;
 			margin-bottom: 0;
-			text-transform: uppercase;
 		}
 
 		body.is-ie header.major > :first-child:after {
@@ -1936,7 +1940,6 @@
 		font-weight: 600;
 		letter-spacing: 0.25em;
 		margin: 0 0 1em 0;
-		text-transform: uppercase;
 	}
 
 	input[type="text"],
@@ -2721,6 +2724,7 @@
 
 			.tiles article h3 {
 				font-size: 1.75em;
+        line-height: 1.25em;
 			}
 
 				.tiles article h3 a:hover {
@@ -2766,7 +2770,7 @@
 			}
 
 			.tiles article:hover:before {
-				opacity: 0;
+				opacity: 0.25;
 			}
 
 			.tiles article.is-transitioning {
@@ -3079,7 +3083,6 @@
 		line-height: 3.25em;
 		margin: 0;
 		position: fixed;
-		text-transform: uppercase;
 		top: 0;
 		width: 100%;
 		z-index: 10000;
@@ -3436,10 +3439,7 @@
 				}
 
 				#banner > .inner .content p {
-					font-size: 0.7em;
-					font-weight: 600;
-					letter-spacing: 0.25em;
-					text-transform: uppercase;
+					letter-spacing: 0.10em;
 				}
 
 		#banner.major {
