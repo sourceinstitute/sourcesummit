@@ -185,3 +185,7 @@ a {
   }
 }
 
+/* Overrides */
+#header {
+  display: none;
+}
