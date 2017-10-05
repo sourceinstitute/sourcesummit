@@ -1,0 +1,39 @@
+---
+layout: default
+---
+<article class="post">
+  <div class="row">
+    <div class="col-sm-7">
+    <header class="post-header">
+      <h1 class="post-title">{{ page.title }}</h1>
+    </header>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-sm-7">
+        <div class="post-content">
+          {{ content }}
+        </div>
+    </div>
+    <div class="col-sm-4 col-sm-offset-1">
+      <div class="row" >
+        <h3>Want to organize a Leancamp in your city?</h3>
+        {% include thank_you.html %}
+      </div>
+    <form class="form-horizontal" data-behaviour="contact-form" action="{{ site.formbox-url }}" method="POST">
+          <div class="row">
+              <input class="form-control form-control-lg" type="text" name="name" placeholder="Your name..." required/>
+          </div>
+          <div class="row">
+              <input class="form-control form-control-lg" type="text" name="email" placeholder="Your email address..." required/>
+          </div>
+          <div class="row">
+                <input class="form-control form-control-lg" type="text" name="city" placeholder="Your city...">
+          </div>
+          <div class="row">
+              <button class="btn btn-primary btn-lg" name="button" type="submit">Contact me</button>
+          </div>
+          </form>
+        </div>
+      </div>
+</article>

@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Source Summit</title>
+    <description>Source Summit is where different types of innovators get together to solve each others challenges.
+</description>
+    <link>http://localhost:4000/</link>
+    <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml"/>
+    <pubDate>Thu, 05 Oct 2017 16:02:13 +0300</pubDate>
+    <lastBuildDate>Thu, 05 Oct 2017 16:02:13 +0300</lastBuildDate>
+    <generator>Jekyll v3.3.1</generator>
+    
+      <item>
+        <title>Source Summit Scitech - London</title>
+        <description>&lt;h2 id=&quot;scitech-in-high-growth-south-american-markets&quot;&gt;Scitech in high-growth South American markets&lt;/h2&gt;
+
+&lt;p&gt;This Source Summit is run with The Royal Academy Of Engineering’s Leaders in Innovation Fellowships (LIF) programme.&lt;/p&gt;
+
+&lt;p&gt;You’ll learn from and support 50 engineers from selected from respected academic institutions in Colombia, Brazil and Chile.  Each has developed defensible technology in healthcare, agriculture, manufacturing and a range of other hard sciences.&lt;/p&gt;
+
+</description>
+        <pubDate>Fri, 20 Oct 2017 00:00:00 +0300</pubDate>
+        <link>http://localhost:4000/scitech/</link>
+        <guid isPermaLink="true">http://localhost:4000/scitech/</guid>
+        
+        
+      </item>
+    
+      <item>
+        <title>Source Summit Marketing - Belgrade</title>
+        <description>&lt;h2 id=&quot;marketing-growth-hacking-whatever-works&quot;&gt;Marketing, Growth Hacking, Whatever works&lt;/h2&gt;
+
+&lt;p&gt;This Source Summit focuses on Serbia’s strength in practical marketing for startups.  Beginners and advanced tips and stories will be shared - and the sessions will not be recorded so you’ll see and learn what really works!&lt;/p&gt;
+</description>
+        <pubDate>Sat, 17 Dec 2016 00:00:00 +0200</pubDate>
+        <link>http://localhost:4000/marketing.html</link>
+        <guid isPermaLink="true">http://localhost:4000/marketing.html</guid>
+        
+        
+      </item>
+    
+      <item>
+        <title>Source Summit AI - Sofia</title>
+        <description>&lt;h2 id=&quot;machine-learning-founders-and-hackers&quot;&gt;Machine Learning founders and hackers&lt;/h2&gt;
+
+&lt;p&gt;Sofia’s AI summit for applied Artificial Intelligence is covering all topics around the best use of Machine Learning – Deep Learning – Cognitive – Augmented Intelligence – Natural Language Processing – Neural Networks – computer vision – and more. Our goal is to bring international speakers who have domain expertise in AI, Machine Learning and Computer Vision who will show us the benefits and the future of technology.&lt;/p&gt;
+
+&lt;p&gt;Sofia AI community is bringing startups, corporates and academics in the AI sphere together to understand the current state of these technologies, its value add for businesses and what we can expect in the near future. Our events aim to reveal new trends, industry insights and practicable approaches of applying technologies.&lt;/p&gt;
+
+&lt;p&gt;Go in depth with sessions that explore different AI applications and technical challenges.&lt;/p&gt;
+
+</description>
+        <pubDate>Sat, 30 Apr 2016 00:00:00 +0300</pubDate>
+        <link>http://localhost:4000/ai.html</link>
+        <guid isPermaLink="true">http://localhost:4000/ai.html</guid>
+        
+        
+      </item>
+    
+      <item>
+        <title>Source Summit Humanitech - Nairobi</title>
+        <description>&lt;h2 id=&quot;hackers-meet-jua-kali-meet-engineers&quot;&gt;Hackers meet jua kali meet Engineers&lt;/h2&gt;
+
+&lt;p&gt;Join us to learn from some of Africa’s rising stars in engineering technology - with this year’s cohort of The Africa Prize For Engineering Technology, mix in some more hardware hackers and startups like Africa Born 3D, BRCK and some high-end jua kali entrepreneurs developing new farming machines.&lt;/p&gt;
+
+</description>
+        <pubDate>Tue, 26 Jan 2016 00:00:00 +0200</pubDate>
+        <link>http://localhost:4000/humanitech.html</link>
+        <guid isPermaLink="true">http://localhost:4000/humanitech.html</guid>
+        
+        
+      </item>
+    
+  </channel>
+</rss>
