@@ -12,7 +12,7 @@ permalink: /events/
 
     <div class="clearfix">
 
-      <h2 class="event-time-heading fix-top">Future {% if site.event_label %} {{site.event_label}} {% else %} Events {% endif %} </h2>
+      <h2 class="event-time-heading fix-top">Upcoming {% if site.event_label %} {{site.event_label}} {% else %} Events {% endif %} </h2>
 
       {% for post in site.posts reversed %}
 
