@@ -24,7 +24,7 @@ layout: default
           {% if blogDate > currentDate %}
               {% if page.ticket_link %}
               <div>
-                <a href='{{page.ticket_link}}' target="_blank" class="btn btn-primary btn-lg" style="color: white;">Buy Tickets</a>
+                <a href='{{page.ticket_link}}' target="_blank" class="btn btn-primary btn-lg" style="color: white;">Register To Participate</a>
               </div>
               {% endif %}
           {% endif %}
@@ -104,7 +104,23 @@ layout: default
       </div>
       {% endif %}
     </div>
-    {% if page.ambassadors %}
+        {% if page.scheduled == true %}
+      <div class="col-sm-12 text-center">
+        <h2 class="post-date"><time datetime="{{ page.date | date_to_xmlschema }}" itemprop="datePublished">{{ page.date | date: "%B %-d, %Y" }}</time>{% if page.author %} • <span itemprop="author" itemscope itemtype="http://schema.org/Person"><span itemprop="name">{{ page.author }}</span></span>{% endif %}</h2>
+
+        <h3 class="post-time">From {{ page.start_time}} to {{page.end_time }}</h3>
+        <br>
+
+          {% if blogDate > currentDate %}
+              {% if page.ticket_link %}
+              <div>
+                <a href='{{page.ticket_link}}' target="_blank" class="btn btn-primary btn-lg" style="color: white;">Register To Participate</a>
+              </div>
+              {% endif %}
+          {% endif %}
+        </div>
+        {% endif %}
+     {% if page.ambassadors %}
     <div class="row">
       <div class="col-sm-12">
         <h1 class="post-title" itemprop="name headline">Team</h1>
