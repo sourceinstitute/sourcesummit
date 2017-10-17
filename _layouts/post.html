@@ -109,7 +109,7 @@ layout: default
       <div class="col-sm-6">
         <p class="event-h3"><i class="fa fa-map-marker fa-lg" style="vertical-align: middle;"></i> Venue</p>
         {% for detail in page.venue %}
-        <p class="event-h3"><strong>{{ detail.name }}</strong></p>
+        <p class="event-h3">{{ detail.name }}</p>
 				{% if detail.picture %}
         	<p><img src="{{ detail.picture }}"></img></p>
 				{% endif %}
@@ -135,6 +135,16 @@ layout: default
           {% endif %}
         </div>
         {% endif %}
+
+    {% if page.sponsors %}
+      <div class="col-sm-12 text-center sponsors">
+        <h4>Supported By</h4>
+        {% for sponsor in page.sponsors %}
+        <p><a href="{{ sponsor.link }}"><img src="{{ sponsor.logo }}" alt="{{ sponsor.name }} logo"></img></a></p>
+        {% endfor %}
+      </div>
+    {% endif %}
+
      {% if page.ambassadors %}
     <div class="row">
       <div class="col-sm-12">
