@@ -450,3 +450,29 @@
   font-size: 30px;
   font-weight: 500;
 }
+
+.speakers{
+  display: -webkit-flex;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display:         flex;
+  -webkit-flex-flow: row wrap;
+  flex-flow: row wrap;
+  -webkit-align-content: flex-end;
+  align-content: flex-end;
+}
+
+.speaker{
+  height: 100%;
+  font-size: 12px;
+
+  .title {
+    display: block;
+    font-size:12px;
+  }
+
+  img {
+    max-width:120px;
+    max-height:120px;
+  }
+}

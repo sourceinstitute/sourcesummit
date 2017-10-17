@@ -14,7 +14,7 @@ layout: default
       <div class="col-md-8">
         <h1 class="post-title" itemprop="name headline">{{ page.title }} </h1>
         {% if organiser.photo %}
-            <h3 class="post-organisers-name">By {{organiser.name}}</h3>
+            <h3 class="post-organisers-name">Organised By {{organiser.name}}</h3>
         {% endif %}
         {% if page.scheduled == true %}
         <h2 class="post-date"><time datetime="{{ page.date | date_to_xmlschema }}" itemprop="datePublished">{{ page.date | date: "%B %-d, %Y" }}</time>{% if page.author %} • <span itemprop="author" itemscope itemtype="http://schema.org/Person"><span itemprop="name">{{ page.author }}</span></span>{% endif %}</h2>
@@ -40,7 +40,7 @@ layout: default
         {{ content }}
       </div>
     </div>
-    <div class="col-md-8">
+   <div class="col-md-8">
         {% if blogDate >= currentDate %}
               {% if page.ticket_link %}
               <!--Ticket link has been moved, so don't show anything here-->
@@ -83,7 +83,20 @@ layout: default
         {% endif %}
       </div>
     </div>
-    <div class="row">
+    {% if page.speakers %}
+    <div class="row row-eq-height speakers">
+        {% for speaker in page.speakers %}
+    <div class="col-md-2 speaker">
+        <img src="{{ speaker.pic }}"> 
+        <h4>{{ speaker.name }}
+        <span class="title">{{ speaker.title}}</span>
+        </h4>
+        {{ speaker.desc }}</p>
+      </div>
+        {% endfor %}
+      </div>
+      {% endif %}
+     <div class="row">
       {% if page.schedule %}
       <div class="col-sm-6">
         <p class="event-h3"><i class="fa fa-clock-o fa-lg" style="vertical-align: middle;"></i> Schedule</p>
