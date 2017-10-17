@@ -240,8 +240,12 @@
 }
 
 .post-date{
-  margin:10px 0 0 0;
+  margin: 32px 0 6px;
   padding: 0;
+
+	@media only screen and (min-width: 769px) {
+		margin-top: 24px;
+	}
 }
 
 
@@ -255,20 +259,15 @@
     letter-spacing: -1px;
     line-height: 1;
     padding:0;
-    margin:$spacing-unit 0 0;
+    margin: 0 0 6px;
 
     @include media-query($on-laptop) {
       font-size: 36px;
-      width: 70%;
-    }
-
-    @include media-query($on-palm){
-      width: 50%;
     }
 }
 
 .post-content {
-    margin-bottom: $whitespace-bottom;
+    margin-bottom: $spacing-unit;
 
     h2 {
         font-size: 26px;
@@ -288,10 +287,16 @@
 
     h4 {
         font-size: 20px;
-        @include media-query($on-laptop) {
+				margin: calc(#{$spacing-unit}/1.25) 0 calc(#{$spacing-unit}/10);
+
+				@include media-query($on-laptop) {
             font-size: 18px;
         }
     }
+
+		h3 + h4 {
+			margin-top: 0;
+		}
 }
 
 .clearfix{
