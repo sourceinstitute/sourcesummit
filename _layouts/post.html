@@ -11,7 +11,7 @@ layout: default
 
   <header class="post-header">
     <div class="row">
-      <div class="col-sm-6">
+      <div class="col-md-8">
         <h1 class="post-title" itemprop="name headline">{{ page.title }} </h1>
         {% if organiser.photo %}
             <h3 class="post-organisers-name">By {{organiser.name}}</h3>
@@ -35,12 +35,12 @@ layout: default
 
   <div class="row">
 
-    <div class="col-sm-6">
+    <div class="col-md-8">
       <div class="post-content" itemprop="articleBody">
         {{ content }}
       </div>
     </div>
-    <div class="col-sm-6">
+    <div class="col-md-8">
         {% if blogDate >= currentDate %}
               {% if page.ticket_link %}
               <!--Ticket link has been moved, so don't show anything here-->
@@ -97,9 +97,11 @@ layout: default
         <p class="event-h3"><i class="fa fa-map-marker fa-lg" style="vertical-align: middle;"></i> Venue</p>
         {% for detail in page.venue %}
         <p class="event-h3"><strong>{{ detail.name }}</strong></p>
-        <img src="{{ detail.picture }}"></img>
+				{% if detail.picture %}
+        	<p><img src="{{ detail.picture }}"></img></p>
+				{% endif %}
         <p>{{ detail.description }}</p>
-        <a class="panel" href="{{ detail.link }}">Location and more info</a>
+        <a class="btn btn-primary" href="{{ detail.link }}">Location and more info</a>
         {% endfor %}
       </div>
       {% endif %}
