@@ -103,7 +103,6 @@
           color: inherit;
           box-shadow: none;
           &:hover{
-            text-decoration: underline;
             background:none;
           }
         }
@@ -240,8 +239,12 @@
 }
 
 .post-date{
-  margin:10px 0 0 0;
+  margin: 32px 0 6px;
   padding: 0;
+
+	@media only screen and (min-width: 769px) {
+		margin-top: 24px;
+	}
 }
 
 
@@ -255,20 +258,15 @@
     letter-spacing: -1px;
     line-height: 1;
     padding:0;
-    margin:$spacing-unit 0 0;
+    margin: 0 0 6px;
 
     @include media-query($on-laptop) {
       font-size: 36px;
-      width: 70%;
-    }
-
-    @include media-query($on-palm){
-      width: 50%;
     }
 }
 
 .post-content {
-    margin-bottom: $whitespace-bottom;
+    margin-bottom: $spacing-unit;
 
     h2 {
         font-size: 26px;
@@ -288,10 +286,16 @@
 
     h4 {
         font-size: 20px;
-        @include media-query($on-laptop) {
+				margin: calc(#{$spacing-unit}/1.25) 0 calc(#{$spacing-unit}/10);
+
+				@include media-query($on-laptop) {
             font-size: 18px;
         }
     }
+
+		h3 + h4 {
+			margin-top: 0;
+		}
 }
 
 .clearfix{
@@ -444,4 +448,43 @@
   font-style: normal;
   font-size: 30px;
   font-weight: 500;
+}
+
+.speakers{
+  display: -webkit-flex;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display:         flex;
+  -webkit-flex-flow: row wrap;
+  flex-flow: row wrap;
+  -webkit-align-content: flex-end;
+  align-content: flex-end;
+}
+
+.speaker{
+  height: 100%;
+  font-size: 12px;
+  margin-bottom: 40px;
+
+  h4 {
+    margin-bottom: 4px;
+  }
+
+  .title {
+    display: block;
+    font-size:12px;
+  }
+
+  img {
+    max-width:120px;
+    max-height:120px;
+  }
+}
+
+.sponsors {
+  margin: 60px 0 30px 0;
+
+  img {
+    max-width: 200px;
+  }
 }

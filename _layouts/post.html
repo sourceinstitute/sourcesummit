@@ -11,10 +11,10 @@ layout: default
 
   <header class="post-header">
     <div class="row">
-      <div class="col-sm-6">
+      <div class="col-md-8">
         <h1 class="post-title" itemprop="name headline">{{ page.title }} </h1>
         {% if organiser.photo %}
-            <h3 class="post-organisers-name">By {{organiser.name}}</h3>
+            <h3 class="post-organisers-name">Organised By {{organiser.name}}</h3>
         {% endif %}
         {% if page.scheduled == true %}
         <h2 class="post-date"><time datetime="{{ page.date | date_to_xmlschema }}" itemprop="datePublished">{{ page.date | date: "%B %-d, %Y" }}</time>{% if page.author %} • <span itemprop="author" itemscope itemtype="http://schema.org/Person"><span itemprop="name">{{ page.author }}</span></span>{% endif %}</h2>
@@ -24,7 +24,7 @@ layout: default
           {% if blogDate > currentDate %}
               {% if page.ticket_link %}
               <div>
-                <a href='{{page.ticket_link}}' target="_blank" class="btn btn-primary btn-lg" style="color: white;">Buy Tickets</a>
+                <a href='{{page.ticket_link}}' target="_blank" class="btn btn-primary btn-lg" style="color: white;">Register Now</a>
               </div>
               {% endif %}
           {% endif %}
@@ -35,12 +35,12 @@ layout: default
 
   <div class="row">
 
-    <div class="col-sm-6">
+    <div class="col-md-8">
       <div class="post-content" itemprop="articleBody">
         {{ content }}
       </div>
     </div>
-    <div class="col-sm-6">
+   <div class="col-md-8">
         {% if blogDate >= currentDate %}
               {% if page.ticket_link %}
               <!--Ticket link has been moved, so don't show anything here-->
@@ -83,7 +83,20 @@ layout: default
         {% endif %}
       </div>
     </div>
-    <div class="row">
+    {% if page.speakers %}
+    <div class="row row-eq-height speakers">
+        {% for speaker in page.speakers %}
+    <div class="col-md-2 speaker">
+        <img src="{{ speaker.pic }}"> 
+        <h4>{{ speaker.name }}
+        <span class="title">{{ speaker.title}}</span>
+        </h4>
+        {{ speaker.desc }}</p>
+      </div>
+        {% endfor %}
+      </div>
+      {% endif %}
+     <div class="row">
       {% if page.schedule %}
       <div class="col-sm-6">
         <p class="event-h3"><i class="fa fa-clock-o fa-lg" style="vertical-align: middle;"></i> Schedule</p>
@@ -96,15 +109,43 @@ layout: default
       <div class="col-sm-6">
         <p class="event-h3"><i class="fa fa-map-marker fa-lg" style="vertical-align: middle;"></i> Venue</p>
         {% for detail in page.venue %}
-        <p class="event-h3"><strong>{{ detail.name }}</strong></p>
-        <img src="{{ detail.picture }}"></img>
+        <p class="event-h3">{{ detail.name }}</p>
+				{% if detail.picture %}
+        	<p><img src="{{ detail.picture }}"></img></p>
+				{% endif %}
         <p>{{ detail.description }}</p>
-        <a class="panel" href="{{ detail.link }}">Location and more info</a>
+        <a class="btn btn-primary" href="{{ detail.link }}">Location and more info</a>
         {% endfor %}
       </div>
       {% endif %}
     </div>
-    {% if page.ambassadors %}
+        {% if page.scheduled == true %}
+      <div class="col-sm-12 text-center">
+        <h2 class="post-date"><time datetime="{{ page.date | date_to_xmlschema }}" itemprop="datePublished">{{ page.date | date: "%B %-d, %Y" }}</time>{% if page.author %} • <span itemprop="author" itemscope itemtype="http://schema.org/Person"><span itemprop="name">{{ page.author }}</span></span>{% endif %}</h2>
+
+        <h3 class="post-time">From {{ page.start_time}} to {{page.end_time }}</h3>
+        <br>
+
+          {% if blogDate > currentDate %}
+              {% if page.ticket_link %}
+              <div>
+                <a href='{{page.ticket_link}}' target="_blank" class="btn btn-primary btn-lg" style="color: white;">Register Now</a>
+              </div>
+              {% endif %}
+          {% endif %}
+        </div>
+        {% endif %}
+
+    {% if page.sponsors %}
+      <div class="col-sm-12 text-center sponsors">
+        <h4>Supported By</h4>
+        {% for sponsor in page.sponsors %}
+        <p><a href="{{ sponsor.link }}"><img src="{{ sponsor.logo }}" alt="{{ sponsor.name }} logo"></img></a></p>
+        {% endfor %}
+      </div>
+    {% endif %}
+
+     {% if page.ambassadors %}
     <div class="row">
       <div class="col-sm-12">
         <h1 class="post-title" itemprop="name headline">Team</h1>
