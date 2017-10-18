@@ -478,8 +478,11 @@
   }
   
   img {
-    max-width: 170px;
-    max-height: 170px;
+    width: 170px;
+    height: 170px;
+    object-fit: cover;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
   }
   
   p {
