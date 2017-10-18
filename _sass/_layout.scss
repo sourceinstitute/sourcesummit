@@ -483,6 +483,9 @@
     object-fit: cover;
     -moz-border-radius: 5px;
     border-radius: 5px;
+    filter: gray; /* IE6-9 */
+    -webkit-filter:  sepia(90%) hue-rotate(50deg);  /* Google Chrome, Safari 6+ & Opera 15+ */
+    filter: sepia(90%) hue-rotate(50deg); /* Microsoft Edge and Firefox 35+ */
   }
   
   p {
