@@ -14,23 +14,23 @@ layout: default
       <div class="col-md-8">
         <h1 class="post-title" itemprop="name headline">{{ page.title }} </h1>
         {% if organiser.photo %}
-            <h3 class="post-organisers-name">Organised By {{organiser.name}}</h3>
+        <h3 class="post-organisers-name">Organised By {{organiser.name}}</h3>
         {% endif %}
         {% if page.scheduled == true %}
         <h2 class="post-date"><time datetime="{{ page.date | date_to_xmlschema }}" itemprop="datePublished">{{ page.date | date: "%B %-d, %Y" }}</time>{% if page.author %} • <span itemprop="author" itemscope itemtype="http://schema.org/Person"><span itemprop="name">{{ page.author }}</span></span>{% endif %}</h2>
 
         <h3 class="post-time">From {{ page.start_time}} to {{page.end_time }}</h3>
         <br>
-          {% if blogDate > currentDate %}
-              {% if page.ticket_link %}
-              <div>
-                <a href='{{page.ticket_link}}' target="_blank" class="btn btn-primary btn-lg" style="color: white;">Register Now</a>
-              </div>
-              {% endif %}
-          {% endif %}
+        {% if blogDate > currentDate %}
+        {% if page.ticket_link %}
+        <div>
+          <a href='{{page.ticket_link}}' target="_blank" class="btn btn-primary btn-lg" style="color: white;">Register Now</a>
+        </div>
+        {% endif %}
+        {% endif %}
         {% endif %}
       </div>
-   </div>
+    </div>
   </header>
 
   <div class="row">
@@ -40,150 +40,150 @@ layout: default
         {{ content }}
       </div>
     </div>
-   <div class="col-md-8">
-        {% if blogDate >= currentDate %}
-              {% if page.ticket_link %}
-              <!--Ticket link has been moved, so don't show anything here-->
-              {% else %}
-                    <div class="row" >
-                      <h3>Please let me know if you're interested in joining</h3>
-                    </div>
-                      {% include thank_you.html %}
-                    <form class="form-horizontal" data-behaviour="contact-form" action="{{ site.formbox-url }}?city={{ page.city }}&event={{ page.event }}" method="GET">
-                      <input type="hidden" name="subject" value="Interest in attending">
-                      <div class="row">
-                        <input class="form-control" type="text" name="name" placeholder="Your name">
-                      </div>
-                      <div class="row">
-                        <input class="form-control" type="text" name="email" placeholder="Your email">
-                      </div>
-                      {% if page.city %}
-                        <input type="hidden" name="city" value="{{ page.city }}">
-                      {% else %}
-                        <input type="hidden" name="event" value="{{ page.title }}">
-                      {% endif %}
-                      <div class="row" >
-                          <button class="btn btn-primary btn-lg" name="button" type="submit">Join!</button>
-                      </div>
-                    </form>
-              {% endif %}
-        {% else %}
-
-          <div class="row" >
-            <h3>This event ended, stay in touch for the next one!</h3>
-          </div>
-          <div class="row" >
-            {% include thank_you.html %}
-          </div>
-          <form class="form-horizontal" data-behaviour="contact-form" action="{{ site.formbox-url }}?city={{ page.city}}&event={{ page.title }}" method="POST">
-           <div class="row">
-              <button class="btn btn-primary btn-lg" name="button" type="submit">Keep me updated!</button>
-            </div>
-          </form>
-        {% endif %}
+    <div class="col-md-8">
+      {% if blogDate >= currentDate %}
+      {% if page.ticket_link %}
+      <!--Ticket link has been moved, so don't show anything here-->
+      {% else %}
+      <div class="row" >
+        <h3>Please let me know if you're interested in joining</h3>
       </div>
-    </div>
-    {% if page.speakers %}
-    <div class="row row-eq-height speakers">
-        {% for speaker in page.speakers %}
-    <div class="col-md-2 speaker">
-        <img src="{{ speaker.pic }}"> 
-        <h4>{{ speaker.name }}
-        <span class="title">{{ speaker.title}}</span>
-        </h4>
-        {{ speaker.desc }}</p>
-      </div>
-        {% endfor %}
-      </div>
-      {% endif %}
-     <div class="row">
-      {% if page.schedule %}
-      <div class="col-sm-6">
-        <p class="event-h3"><i class="fa fa-clock-o fa-lg" style="vertical-align: middle;"></i> Schedule</p>
-        {% for slot in page.schedule %}
-        <p>{{ slot.time }} - {{ slot.track }}</p>
-        {% endfor %}
-      </div>
-      {% endif %}
-      {% if page.venue %}
-      <div class="col-sm-6">
-        <p class="event-h3"><i class="fa fa-map-marker fa-lg" style="vertical-align: middle;"></i> Venue</p>
-        {% for detail in page.venue %}
-        <p class="event-h3">{{ detail.name }}</p>
-				{% if detail.picture %}
-        	<p><img src="{{ detail.picture }}"></img></p>
-				{% endif %}
-        <p>{{ detail.description }}</p>
-        <a class="btn btn-primary" href="{{ detail.link }}">Location and more info</a>
-        {% endfor %}
-      </div>
-      {% endif %}
-    </div>
-        {% if page.scheduled == true %}
-      <div class="col-sm-12 text-center">
-        <h2 class="post-date"><time datetime="{{ page.date | date_to_xmlschema }}" itemprop="datePublished">{{ page.date | date: "%B %-d, %Y" }}</time>{% if page.author %} • <span itemprop="author" itemscope itemtype="http://schema.org/Person"><span itemprop="name">{{ page.author }}</span></span>{% endif %}</h2>
-
-        <h3 class="post-time">From {{ page.start_time}} to {{page.end_time }}</h3>
-        <br>
-
-          {% if blogDate > currentDate %}
-              {% if page.ticket_link %}
-              <div>
-                <a href='{{page.ticket_link}}' target="_blank" class="btn btn-primary btn-lg" style="color: white;">Register Now</a>
-              </div>
-              {% endif %}
-          {% endif %}
+      {% include thank_you.html %}
+      <form class="form-horizontal" data-behaviour="contact-form" action="{{ site.formbox-url }}?city={{ page.city }}&event={{ page.event }}" method="GET">
+        <input type="hidden" name="subject" value="Interest in attending">
+        <div class="row">
+          <input class="form-control" type="text" name="name" placeholder="Your name">
         </div>
+        <div class="row">
+          <input class="form-control" type="text" name="email" placeholder="Your email">
+        </div>
+        {% if page.city %}
+        <input type="hidden" name="city" value="{{ page.city }}">
+        {% else %}
+        <input type="hidden" name="event" value="{{ page.title }}">
         {% endif %}
+        <div class="row" >
+          <button class="btn btn-primary btn-lg" name="button" type="submit">Join!</button>
+        </div>
+      </form>
+      {% endif %}
+      {% else %}
 
-    {% if page.sponsors %}
-      <div class="col-sm-12 text-center sponsors">
-        <h4>Supported By</h4>
-        {% for sponsor in page.sponsors %}
-        <p><a href="{{ sponsor.link }}"><img src="{{ sponsor.logo }}" alt="{{ sponsor.name }} logo"></img></a></p>
-        {% endfor %}
+      <div class="row" >
+        <h3>This event ended, stay in touch for the next one!</h3>
       </div>
-    {% endif %}
-
-     {% if page.ambassadors %}
-    <div class="row">
-      <div class="col-sm-12">
-        <h1 class="post-title" itemprop="name headline">Team</h1>
+      <div class="row" >
+        {% include thank_you.html %}
       </div>
+      <form class="form-horizontal" data-behaviour="contact-form" action="{{ site.formbox-url }}?city={{ page.city}}&event={{ page.title }}" method="POST">
+        <div class="row">
+          <button class="btn btn-primary btn-lg" name="button" type="submit">Keep me updated!</button>
+        </div>
+      </form>
+      {% endif %}
     </div>
-    <div class="row">
-  {% if organiser.photo %}
+  </div>
+  {% if page.speakers %}
+  <div class="row row-eq-height speakers">
+    {% for speaker in page.speakers %}
+    <div class="col-md-3 col-sm-6 speaker">
+      <img src="{{ speaker.pic }}">
+      <h4>{{ speaker.name }}
+        <span class="title">{{ speaker.title}}</span>
+      </h4>
+      <p>{{ speaker.desc }}</p>
+    </div>
+    {% endfor %}
+  </div>
+  {% endif %}
+  <div class="row">
+    {% if page.schedule %}
+    <div class="col-sm-6">
+      <p class="event-h3"><i class="fa fa-clock-o fa-lg" style="vertical-align: middle;"></i> Schedule</p>
+      {% for slot in page.schedule %}
+      <p>{{ slot.time }} - {{ slot.track }}</p>
+      {% endfor %}
+    </div>
+    {% endif %}
+    {% if page.venue %}
+    <div class="col-sm-6">
+      <p class="event-h3"><i class="fa fa-map-marker fa-lg" style="vertical-align: middle;"></i> Venue</p>
+      {% for detail in page.venue %}
+      <p class="event-h3">{{ detail.name }}</p>
+      {% if detail.picture %}
+      <p><img src="{{ detail.picture }}"></img></p>
+      {% endif %}
+      <p>{{ detail.description }}</p>
+      <a class="btn btn-primary" href="{{ detail.link }}">Location and more info</a>
+      {% endfor %}
+    </div>
+    {% endif %}
+  </div>
+  {% if page.scheduled == true %}
+  <div class="col-sm-12 text-center">
+    <h2 class="post-date"><time datetime="{{ page.date | date_to_xmlschema }}" itemprop="datePublished">{{ page.date | date: "%B %-d, %Y" }}</time>{% if page.author %} • <span itemprop="author" itemscope itemtype="http://schema.org/Person"><span itemprop="name">{{ page.author }}</span></span>{% endif %}</h2>
+
+    <h3 class="post-time">From {{ page.start_time}} to {{page.end_time }}</h3>
+    <br>
+
+    {% if blogDate > currentDate %}
+    {% if page.ticket_link %}
+    <div>
+      <a href='{{page.ticket_link}}' target="_blank" class="btn btn-primary btn-lg" style="color: white;">Register Now</a>
+    </div>
+    {% endif %}
+    {% endif %}
+  </div>
+  {% endif %}
+
+  {% if page.sponsors %}
+  <div class="col-sm-12 text-center sponsors">
+    <h4>Supported By</h4>
+    {% for sponsor in page.sponsors %}
+    <p><a href="{{ sponsor.link }}"><img src="{{ sponsor.logo }}" alt="{{ sponsor.name }} logo"></img></a></p>
+    {% endfor %}
+  </div>
+  {% endif %}
+
+  {% if page.ambassadors %}
+  <div class="row">
+    <div class="col-sm-12">
+      <h1 class="post-title" itemprop="name headline">Team</h1>
+    </div>
+  </div>
+  <div class="row">
+    {% if organiser.photo %}
     <div class="author" style="background-image:url({{organiser.photo}});">
     </div>
-  {% endif %}
+    {% endif %}
     {% for ambassador in page.ambassadors %}
     {% assign currentAmbassador = site.data.ambassadors.[ambassador] %}
-      <div class="col-lg-3 col-md-6 text-center">
-        <div class="ambassador">
-          <img class="ambassador-img" src="{{ currentAmbassador.photo }}">
-          <h2>{{ currentAmbassador.name }}</h2>
-          <p>{{ currentAmbassador.bio }}</p>
-        </div>
+    <div class="col-lg-3 col-md-6 text-center">
+      <div class="ambassador">
+        <img class="ambassador-img" src="{{ currentAmbassador.photo }}">
+        <h2>{{ currentAmbassador.name }}</h2>
+        <p>{{ currentAmbassador.bio }}</p>
       </div>
+    </div>
     {% endfor %}
     {% endif %}
+  </div>
+  {% if page.organisers %}
+  <div class="row">
+    <div class="col-sm-12">
+      <h1 class="post-title" itemprop="name headline">Organisers</h1>
     </div>
-    {% if page.organisers %}
-    <div class="row">
-      <div class="col-sm-12">
-        <h1 class="post-title" itemprop="name headline">Organisers</h1>
-      </div>
-    </div>
-    <div class="row">
+  </div>
+  <div class="row">
     {% for organiser in page.organisers %}
     {% assign currentOrganiser = site.data.organisers.[organiser] %}
-      <div class="col-lg-3 col-md-6 text-center">
-        <div class="ambassador">
-          <img class="ambassador-img" src="{{ currentOrganiser.photo }}">
-          <h2>{{ currentOrganiser.name }}</h2>
-        </div>
+    <div class="col-lg-3 col-md-6 text-center">
+      <div class="ambassador">
+        <img class="ambassador-img" src="{{ currentOrganiser.photo }}">
+        <h2>{{ currentOrganiser.name }}</h2>
       </div>
+    </div>
     {% endfor %}
     {% endif %}
-    </div>
+  </div>
 </article>
