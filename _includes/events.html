@@ -2,12 +2,10 @@
 
     <div class="clearfix">
 
-      <h2 style="margin-top: 15px; margin-bottom: 10px;">Upcoming {% if site.event_label %} {{site.event_label}} {% else %} Events {% endif %} </h2>
-
       {% for post in site.posts reversed %}
 
         {% capture blogDate %}{{post.date | date: '%s' }}{% endcapture %}
-        {% if blogDate >= currentDate %}
+        {% if blogDate > currentDate %}
           <a href="{{ post.url | prepend: site.baseurl }}">
             {% if post.cover %}
             <div class="event-sqaure" style="background-image:url({{post.cover}});">
@@ -34,7 +32,7 @@
 
         {% capture blogDate %}{{post.date | date: '%s' }}{% endcapture %}
 
-        {% if blogDate < currentDate and post.scheduled == true %}
+        {% if blogDate <= currentDate and post.scheduled == true %}
 
           <a href="{{ post.url | prepend: site.baseurl }}">
             {% if post.cover %}
