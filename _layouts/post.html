@@ -116,8 +116,8 @@ layout: default
     <div class="col-sm-6">
       <p class="event-h3"><i class="fa fa-clock-o fa-lg" style="vertical-align: middle;"></i> Schedule</p>
       {% for slot in page.schedule %}
-      {% if slot.date %}
-        <p><strong>{{ slot.date | date: "%B %-d"  }}</strong>
+      {% if slot.date or slot.title %}
+        <p><strong>{{ slot.date | date: "%B %-d"  }}: {{ slot.title }} </strong>
       {% endif %}
       <p>{{ slot.time }} - {{ slot.track }}</p>
       {% endfor %}
