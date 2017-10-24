@@ -2,7 +2,12 @@
 layout: default
 ---
 
+{% if page.end_date%}
+{% capture blogDate %}{{page.end_date | date: '%s' }}{% endcapture %}
+{% else %}
 {% capture blogDate %}{{page.date | date: '%s' }}{% endcapture %}
+{% endif %}
+
 {% capture currentDate %}{{'now' | date: '%s' }}{% endcapture %}
 
 {% assign organiser = site.data.organisers.[page.organiser] %}
@@ -17,9 +22,19 @@ layout: default
         <h3 class="post-organisers-name">Organised By {{organiser.name}}</h3>
         {% endif %}
         {% if page.scheduled == true %}
-        <h2 class="post-date"><time datetime="{{ page.date | date_to_xmlschema }}" itemprop="datePublished">{{ page.date | date: "%B %-d, %Y" }}</time>{% if page.author %} • <span itemprop="author" itemscope itemtype="http://schema.org/Person"><span itemprop="name">{{ page.author }}</span></span>{% endif %}</h2>
+        <h2 class="post-date"><time datetime="{{ page.date | date_to_xmlschema }}" itemprop="datePublished">{{ page.date | date: "%B %-d, %Y" }}
+          {% if page.end_date %}
+          to {{ page.end_date | date: "%B %-d, %Y" }}
+          {% endif %}
+        </time>{% if page.author %} • <span itemprop="author" itemscope itemtype="http://schema.org/Person"><span itemprop="name">{{ page.author }}</span></span>{% endif %}</h2>
 
-        <h3 class="post-time">From {{ page.start_time}} to {{page.end_time }}</h3>
+        {% if page.start_time  %}
+        <h3 class="post-time">From {{ page.start_time}} 
+          {% if page.end_time  %}
+          to {{page.end_time }}
+          {% endif %}
+        </h3>
+        {% endif %}
         <br>
         {% if blogDate > currentDate %}
         {% if page.ticket_link %}
@@ -101,6 +116,9 @@ layout: default
     <div class="col-sm-6">
       <p class="event-h3"><i class="fa fa-clock-o fa-lg" style="vertical-align: middle;"></i> Schedule</p>
       {% for slot in page.schedule %}
+      {% if slot.date %}
+        <p><strong>{{ slot.date | date: "%B %-d"  }}</strong>
+      {% endif %}
       <p>{{ slot.time }} - {{ slot.track }}</p>
       {% endfor %}
     </div>
@@ -119,11 +137,23 @@ layout: default
     </div>
     {% endif %}
   </div>
+
   {% if page.scheduled == true %}
   <div class="col-sm-12 text-center">
-    <h2 class="post-date"><time datetime="{{ page.date | date_to_xmlschema }}" itemprop="datePublished">{{ page.date | date: "%B %-d, %Y" }}</time>{% if page.author %} • <span itemprop="author" itemscope itemtype="http://schema.org/Person"><span itemprop="name">{{ page.author }}</span></span>{% endif %}</h2>
+        <h2 class="post-date"><time datetime="{{ page.date | date_to_xmlschema }}" itemprop="datePublished">{{ page.date | date: "%B %-d, %Y" }}
+          {% if page.end_date %}
+          to {{ page.end_date | date: "%B %-d, %Y" }}
+          {% endif %}
+        </time>{% if page.author %} • <span itemprop="author" itemscope itemtype="http://schema.org/Person"><span itemprop="name">{{ page.author }}</span></span>{% endif %}</h2>
 
-    <h3 class="post-time">From {{ page.start_time}} to {{page.end_time }}</h3>
+        {% if page.start_time  %}
+        <h3 class="post-time">From {{ page.start_time}} 
+          {% if page.end_time  %}
+          to {{page.end_time }}
+          {% endif %}
+        </h3>
+        {% endif %}
+ 
     <br>
 
     {% if blogDate > currentDate %}
