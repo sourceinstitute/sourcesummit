@@ -31,7 +31,6 @@ permalink: /events/
             {% endif %}
                <div class='event-square-overlay'></div>
             </div>
-
           </a>
         {% endif %}
       {% endfor %}
