@@ -1,6 +1,7 @@
     {% capture currentDate %}{{'now' | date: '%s' }}{% endcapture %}
 
     <div class="clearfix">
+			<h2 class="event-time-heading fix-top">Upcoming {% if site.event_label %} {{site.event_label}} {% else %} Events {% endif %} </h2>
 
       {% for post in site.posts reversed %}
 
@@ -18,7 +19,7 @@
             <div class="event-sqaure" style="background-image:url(img/Stuttgart3_022.jpg);">
             {% endif %}
             {% if post.scheduled %}
-              <h2>{{ post.title }} 
+              <h2>{{ post.title }}
               {% if post.end_date %}
               <span>{{ post.date | date: "%b %-d" }} to {{ post.end_date | date: "%b %-d, %Y" }}</span>
               {% else %}
@@ -56,7 +57,7 @@
             {% else %}
             <div class="event-sqaure" style="background-image:url(http://app-beacon.com/wp-content/uploads/2015/05/events.jpg);">
             {% endif %}
-              <h2>{{ post.title }} 
+              <h2>{{ post.title }}
               {% if post.end_date %}
               <span>{{ post.date | date: "%b %-d" }} to {{ post.end_date | date: "%b %-d, %Y" }}</span>
               {% else %}
