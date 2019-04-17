@@ -2,7 +2,7 @@
 layout: post
 
 #event information
-title:  "Source Summit Humanitech - Nairobi"
+title:  "Humanitech - Nairobi"
 cover: "/img/humanitech.jpg"
 scheduled: true
 

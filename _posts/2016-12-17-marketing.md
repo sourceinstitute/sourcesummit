@@ -2,7 +2,7 @@
 layout: post
 
 #event information
-title:  "Source Summit Marketing - Belgrade"
+title:  "Marketing - Belgrade"
 cover: "/img/discussion.jpg"
 scheduled: true
 
