@@ -12,8 +12,7 @@ title: Source Events
 event_label: Events
 
 description: > # this means to ignore newlines until "baseurl:"
-  Source runs peer learning events where the people set the topics based on their goals.
-
+  Source runs peer learning events for people to create the education they need.
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "http://events.source.institute" # the base hostname & protocol for your site
 

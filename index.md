@@ -1,4 +1,4 @@
 ---
 layout: home
-title: 'Source runs peer learning events where  people construct the education they need on demand.'
+title: 'Source runs peer learning events for people to create the education they need.'
 ---
