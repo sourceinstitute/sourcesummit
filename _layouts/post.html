@@ -29,9 +29,13 @@ layout: default
         </time>{% if page.author %} • <span itemprop="author" itemscope itemtype="http://schema.org/Person"><span itemprop="name">{{ page.author }}</span></span>{% endif %}</h2>
 
         {% if page.start_time  %}
-        <h3 class="post-time">From {{ page.start_time}} 
+        <h3 class="post-time">
+          {% if page.time_note%}
+            {{ page.time_note }}
+          {% endif %}
+          From {{ page.start_time}} 
           {% if page.end_time  %}
-          to {{page.end_time }}
+          to {{page.end_time }}.
           {% endif %}
         </h3>
         {% endif %}
@@ -40,6 +44,9 @@ layout: default
         {% if page.ticket_link %}
         <div>
           <a href='{{page.ticket_link}}' target="_blank" class="btn btn-primary btn-lg" style="color: white;">Register Now</a>
+          {% if page.ticket_note%}
+            <span class="note"> {{ page.ticket_note }}</span>
+          {% endif %}
         </div>
         {% endif %}
         {% endif %}
@@ -147,9 +154,13 @@ layout: default
         </time>{% if page.author %} • <span itemprop="author" itemscope itemtype="http://schema.org/Person"><span itemprop="name">{{ page.author }}</span></span>{% endif %}</h2>
 
         {% if page.start_time  %}
-        <h3 class="post-time">From {{ page.start_time}} 
+        <h3 class="post-time">
+          {% if page.time_note%}
+            {{ page.time_note }} 
+          {% endif %}
+          From {{ page.start_time}} 
           {% if page.end_time  %}
-          to {{page.end_time }}
+          to {{page.end_time }}.
           {% endif %}
         </h3>
         {% endif %}
@@ -161,6 +172,9 @@ layout: default
     <div>
       <a href='{{page.ticket_link}}' target="_blank" class="btn btn-primary btn-lg" style="color: white;">Register Now</a>
     </div>
+      {% if page.ticket_note%}
+        <div class="note"> {{ page.ticket_note }}</div>
+      {% endif %}
     {% endif %}
     {% endif %}
   </div>
