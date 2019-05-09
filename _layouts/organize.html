@@ -15,25 +15,5 @@ layout: default
           {{ content }}
         </div>
     </div>
-    <div class="col-sm-4 col-sm-offset-1">
-      <div class="row" >
-        <h3>Want to organize a Leancamp in your city?</h3>
-        {% include thank_you.html %}
-      </div>
-    <form class="form-horizontal" data-behaviour="contact-form" action="{{ site.formbox-url }}" method="POST">
-          <div class="row">
-              <input class="form-control form-control-lg" type="text" name="name" placeholder="Your name..." required/>
-          </div>
-          <div class="row">
-              <input class="form-control form-control-lg" type="text" name="email" placeholder="Your email address..." required/>
-          </div>
-          <div class="row">
-                <input class="form-control form-control-lg" type="text" name="city" placeholder="Your city...">
-          </div>
-          <div class="row">
-              <button class="btn btn-primary btn-lg" name="button" type="submit">Contact me</button>
-          </div>
-          </form>
-        </div>
-      </div>
+   </div>
 </article>

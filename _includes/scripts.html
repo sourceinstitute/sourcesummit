@@ -6,14 +6,3 @@
 <script src="{{ "/js/bootstrap.min.js" | prepend: site.baseurl }}" ></script>
 
 
-<script type="text/javascript">
-$(document).on("submit", '[data-behaviour="contact-form"]', function() {
-  $.post("{{ site.formbox-url }}", $(this).serialize());
-  event.preventDefault();
-});
-
-function formboxCallback(entry) {
-  $('[data-behaviour="contact-form"]').addClass('hidden');
-  $('[data-behaviour="contact-form-thank-you"]').removeClass('hidden');
-}
-</script>

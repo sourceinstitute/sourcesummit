@@ -71,23 +71,9 @@ layout: default
         <h3>Please let me know if you're interested in joining</h3>
       </div>
       {% include thank_you.html %}
-      <form class="form-horizontal" data-behaviour="contact-form" action="{{ site.formbox-url }}?city={{ page.city }}&event={{ page.event }}" method="GET">
-        <input type="hidden" name="subject" value="Interest in attending">
         <div class="row">
-          <input class="form-control" type="text" name="name" placeholder="Your name">
+          <a class="btn btn-primary btn-lg" name="button" href="https://source.institute/subscribe/">Keep me updated on Source events!</a>
         </div>
-        <div class="row">
-          <input class="form-control" type="text" name="email" placeholder="Your email">
-        </div>
-        {% if page.city %}
-        <input type="hidden" name="city" value="{{ page.city }}">
-        {% else %}
-        <input type="hidden" name="event" value="{{ page.title }}">
-        {% endif %}
-        <div class="row" >
-          <button class="btn btn-primary btn-lg" name="button" type="submit">Join!</button>
-        </div>
-      </form>
       {% endif %}
       {% else %}
 
@@ -97,11 +83,9 @@ layout: default
       <div class="row" >
         {% include thank_you.html %}
       </div>
-      <form class="form-horizontal" data-behaviour="contact-form" action="{{ site.formbox-url }}?city={{ page.city}}&event={{ page.title }}" method="POST">
         <div class="row">
-          <button class="btn btn-primary btn-lg" name="button" type="submit">Keep me updated!</button>
+          <a class="btn btn-primary btn-lg" name="button" href="https://source.institute/subscribe/">Keep me updated!</a>
         </div>
-      </form>
       {% endif %}
     </div>
   </div>
