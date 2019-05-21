@@ -5,7 +5,7 @@ permalink: /academic-entrepreneurship-2019/
 #event information
 title:  "Source Summit - Academic Entrepreneurship"
 city: "Wageningen"
-cover: "/img/show_tell.jpg"
+cover: "/img/bart-leancamp.png"
 scheduled: true
 date: 2019-06-07
 end_date: 2019-06-07
